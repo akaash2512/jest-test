@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "jest-image-snapshot": "^4.2.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest-cli": "^26.4.2",
+    "jest-environment-node": "^26.3.0",
+    "jest-puppeteer": "^4.4.0",
+    "mkdirp": "^1.0.4",
+    "puppeteer": "^5.2.1"
+  }
+}
