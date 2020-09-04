@@ -25,9 +25,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install Yarn
         run: |
-             yarn --cwd ./webtesting/
              yarn
              npm uninstall jest
              npm install jest-cli
       - name: Run Jest
-        run: yarn --cwd ./webtesting/ test --updateSnapshot
+        run: yarn test --updateSnapshot
