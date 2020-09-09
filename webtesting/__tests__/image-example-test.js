@@ -1,13 +1,12 @@
-const puppeteer = require('puppeteer')
 const { toMatchImageSnapshot } = require('jest-image-snapshot')
 
 expect.extend({ toMatchImageSnapshot })
 
 describe('A Snapshot test', () => {
-	let page
+	let localPage
 	beforeAll(async () => {
-	    page = await global.__BROWSER__.newPage()
-		await page.setViewport({
+	    localPage = await browser.newPage()
+		await localPage.setViewport({
 			width: 0,
 			height: 0,
 			//isMobile: true,
@@ -15,12 +14,12 @@ describe('A Snapshot test', () => {
 	})
 
 	afterAll(async () => {
-		await page.close()
+		await localPage.close()
 	})
 	const options = {"customSnapshotsDir" : "./mysnaps"}
 	test('homepage snapshot', async () => {
-		await page.goto('https://example.com')
-		const image = await page.screenshot()
+		await localPage.goto(exampleURL)
+		const image = await localPage.screenshot()
 		expect(image).toMatchImageSnapshot(options)
 	})
 })
