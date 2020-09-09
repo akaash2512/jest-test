@@ -5,10 +5,12 @@ import React from 'react';
 class App extends Page {
   render() {
     return (
+	<div>
       <div>
         {this.childComponents}
         {this.childPages}
       </div>
+	</div>
     );
   }
 }
